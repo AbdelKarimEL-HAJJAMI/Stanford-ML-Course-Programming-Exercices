@@ -1,7 +1,7 @@
 import numpy as np
 from sigmoid import sigmoid
 
-def costFunction(theta, X, y, lambda = None, flattenResult=False):
+def costFunction(theta, X, y, reg_lambda = None, flattenResult=False):
     """
     Compute cost for logistic regression
     J = COSTFUNCTION(theta, X, y) computes the cost of using theta as the  
@@ -17,7 +17,7 @@ def costFunction(theta, X, y, lambda = None, flattenResult=False):
     
     J = (1.0/m)*np.sum(np.subtract(cost_y_1, cost_y_0))
     
-    if lambda:
-        J =  J + (lambda/(2*m))*np.sum(np.power(theta[1:], 2))
+    if reg_lambda:
+        J =  J + (reg_lambda/(2*m))*np.sum(np.power(theta[1:], 2))
    
     return J
