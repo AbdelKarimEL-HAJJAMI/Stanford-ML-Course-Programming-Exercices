@@ -9,7 +9,9 @@ def plotData(X, y, xlabel, ylabel, posLineLabel, negLineLabel):
     """
     pos = np.where(y == 1)
     neg = np.where(y == 0)
-    plt.plot(X[pos, 0], X[pos, 1], marker='+', color='black', label=posLineLabel , linestyle='None')[0]
-    plt.plot(X[neg, 0], X[neg, 1], marker='o', color='yellow', label=negLineLabel, linestyle='None')[0]
+    line_pos = plt.plot(X[pos, 0], X[pos, 1], marker='+', color='black', label=posLineLabel , linestyle='None')[0]
+    line_neg = plt.plot(X[neg, 0], X[neg, 1], marker='o', color='yellow', label=negLineLabel, linestyle='None')[0]
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
+    
+    return line_pos, line_neg
