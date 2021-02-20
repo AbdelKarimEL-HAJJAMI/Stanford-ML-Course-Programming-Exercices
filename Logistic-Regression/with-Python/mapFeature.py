@@ -12,11 +12,11 @@ def mapFeature(X1, X2):
    X1 = X1.reshape((X1.size, 1))
    X2 = X2.reshape((X2.size, 1))
    degree = 6
-   X = np.ones(shape=(X1[:, 0].size, 1))
+   out = np.ones(shape=(X1[:, 0].size, 1))
 
    for i in range(1, degree + 1):
        for j in range(i + 1):
            r = (X1 ** (i - j)) * (X2 ** j)
-           X = np.append(X, r, axis=1)
+           out = np.append(out, r, axis=1)
 
-   return X
+   return out
